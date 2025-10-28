@@ -1,0 +1,19 @@
+# === NPC 7: Keeper of Stones ===
+~ start
+Stones: Only the worthy may pass.
+=> Q8
+
+~ Q8
+Stones: θ in 0 ≤ θ < 2π if cos(θ) = −1 is:
+- A. π => Q8_CORRECT
+- B. 2π => Q8_WRONG
+- C. π/2 => Q8_WRONG
+- D. 0 => Q8_WRONG
+
+~ Q8_CORRECT
+Stones: You understand… the stones approve.
+=> END
+
+~ Q8_WRONG
+Stones: Wrong… focus and retry.
+=> Q8

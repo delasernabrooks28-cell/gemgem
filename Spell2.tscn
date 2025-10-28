@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://dj68mhthceelt"]
+
+[ext_resource type="Script" uid="uid://bknyl8yi0csfv" path="res://spell_2.gd" id="1_byq7b"]
+[ext_resource type="Texture2D" uid="uid://chpcukwj3gprf" path="res://Retro Impact Effect Pack 2 A.png" id="2_w0cyv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byq7b"]
+size = Vector2(48, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0cyv"]
+atlas = ExtResource("2_w0cyv")
+region = Rect2(0, 896, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6glnd"]
+atlas = ExtResource("2_w0cyv")
+region = Rect2(64, 896, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kipl6"]
+atlas = ExtResource("2_w0cyv")
+region = Rect2(128, 896, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mao4n"]
+atlas = ExtResource("2_w0cyv")
+region = Rect2(192, 896, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byq7b"]
+atlas = ExtResource("2_w0cyv")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbw1b"]
+atlas = ExtResource("2_w0cyv")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3as7d"]
+atlas = ExtResource("2_w0cyv")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0r4c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0cyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6glnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kipl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mao4n")
+}],
+"loop": true,
+"name": &"fireslash",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byq7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbw1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3as7d")
+}],
+"loop": true,
+"name": &"firewindup",
+"speed": 9.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_byq7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -9)
+shape = SubResource("RectangleShape2D_byq7b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -13)
+sprite_frames = SubResource("SpriteFrames_m0r4c")
+animation = &"fireslash"
+frame_progress = 0.853858

@@ -1,0 +1,83 @@
+~ start
+Solaris: Mortal — the sun remembers when Agis bound us. I am the Warden of Rising Light.  
+Solaris: Prove that your mind burns as brightly as your courage.
+[do! get_tree().get_first_node_in_group("player").lock_player()]
+[do! DialogueManager.solaris.face_player()]
+=> Q1
+
+~ Q1
+Solaris: According to the Even–Odd identities — what is sin(-x)?
+- A. sin(-x) = sin(x) => Q1_WRONG
+- B. sin(-x) = -sin(x) => Q1_CORRECT
+- C. sin(-x) = cos(x) => Q1_WRONG
+- D. sin(-x) = -cos(x) => Q1_WRONG
+
+~ Q1_CORRECT
+Solaris: Bold and right. The flame favors truth. [do! DialogueManager.solaris.trigger_correct_answer()]
+=> Q2
+
+~ Q1_WRONG
+Solaris: Your answer is as cold as shadow. [do! DialogueManager.solaris.trigger_wrong_answer()]
+=> END
+
+~ Q2
+Solaris: What is the general solution for sin(θ) = 0?
+- A. θ = n·π => Q2_CORRECT
+- B. θ = 2·n·π => Q2_WRONG
+- C. θ = π/2 + n·π => Q2_WRONG
+- D. θ = π/2 + 2·n·π => Q2_WRONG
+
+~ Q2_CORRECT
+Solaris: Correct. The pattern reveals itself. [do! DialogueManager.solaris.trigger_correct_answer()]
+=> Q3
+
+~ Q2_WRONG
+Solaris: No — that is not general enough. [do! DialogueManager.solaris.trigger_wrong_answer()]
+=> END
+
+~ Q3
+Solaris: If cos(θ) = −1 and 0 ≤ θ < 2π, what is θ?
+- A. 0 => Q3_WRONG
+- B. π/2 => Q3_WRONG
+- C. π => Q3_CORRECT
+- D. 2π => Q3_WRONG
+
+~ Q3_CORRECT
+Solaris: Well answered — the orbit is precise. [do! DialogueManager.solaris.trigger_correct_answer()]
+=> Q4
+
+~ Q3_WRONG
+Solaris: You misplace the angle. [do! DialogueManager.solaris.trigger_wrong_answer()]
+=> END
+
+~ Q4
+Solaris: The principal value of arcsin(0.5) is:
+- A. 120° => Q4_WRONG
+- B. 30° => Q4_CORRECT
+- C. 150° => Q4_WRONG
+- D. 210° => Q4_WRONG
+
+~ Q4_CORRECT
+Solaris: Sharp. Your sight is true. [do! DialogueManager.solaris.trigger_correct_answer()]
+=> Q5
+
+~ Q4_WRONG
+Solaris: Incorrect — think on the unit circle. [do! DialogueManager.solaris.trigger_wrong_answer()]
+=> END
+
+~ Q5
+Solaris: Which identity is commonly used to solve trig equations?
+- A. sin²(θ) + cos²(θ) = 1 => Q5_CORRECT
+- B. sin(θ) = adjacent/hypotenuse => Q5_WRONG
+- C. tan(θ) = hypotenuse/opposite => Q5_WRONG
+- D. sec(θ) = 1/tan(θ) => Q5_WRONG
+
+~ Q5_CORRECT
+Solaris: The light approves. You have passed my trial. [do! DialogueManager.solaris.trigger_death()]
+[do! get_tree().get_first_node_in_group("player").unlock_player()]
+[do! DialogueManager.solaris.queue_free()]
+=> END!
+
+~ Q5_WRONG
+Solaris: You falter — be gone! [do! DialogueManager.solaris.trigger_wrong_answer()]
+=> END

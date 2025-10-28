@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b74a2s8fmon0t"]
+
+[ext_resource type="Script" uid="uid://c4wqfxs3mb1ii" path="res://spike.gd" id="1_7k7bx"]
+[ext_resource type="Texture2D" uid="uid://dna2rp83ee7vs" path="res://assets/Dungeon Tile Set.png" id="1_8ryga"]
+
+[node name="Spike" type="Node2D"]
+script = ExtResource("1_7k7bx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.875, 0.927083)
+texture = ExtResource("1_8ryga")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-108, -74)
+polygon = PackedVector2Array(66, 78, 66, 75, 66, 72, 68, 72, 69, 71, 70, 70, 72, 70, 76, 70, 83, 71, 90, 70, 109, 70, 113, 70, 121, 70, 132, 70, 141, 70, 149, 69, 151, 70, 153, 72, 152, 77, 150, 80, 116.665, 79.6078, 65, 79)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

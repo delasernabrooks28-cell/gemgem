@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c6l1gmqo0avr8"]
+
+[node name="Area2D" type="Area2D"]

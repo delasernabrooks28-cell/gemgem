@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0nqj16il4uww"]
+
+[ext_resource type="Script" uid="uid://bv3o3d31m7yks" path="res://demon.gd" id="1_vio0h"]
+[ext_resource type="Texture2D" uid="uid://bh5vsftpyclxg" path="res://Sword.png" id="2_vio0h"]
+[ext_resource type="PackedScene" uid="uid://couqagdlvjvd0" path="res://actionable.tscn" id="3_jlc2q"]
+[ext_resource type="Resource" uid="uid://6x3m780kefud" path="res://assets/dialogues/1.dialogue" id="4_877uw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf2h4"]
+atlas = ExtResource("2_vio0h")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlc2q"]
+atlas = ExtResource("2_vio0h")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_877uw"]
+atlas = ExtResource("2_vio0h")
+region = Rect2(256, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frgam"]
+atlas = ExtResource("2_vio0h")
+region = Rect2(384, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80cx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf2h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlc2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_877uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frgam")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8heu"]
+radius = 32.28
+
+[node name="Demon" type="StaticBody2D" groups=["NPCS"]]
+z_index = 4
+script = ExtResource("1_vio0h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-58, -5)
+sprite_frames = SubResource("SpriteFrames_80cx4")
+autoplay = "default"
+frame_progress = 0.59685516
+
+[node name="Actionable" parent="." instance=ExtResource("3_jlc2q")]
+visibility_layer = 31
+position = Vector2(-92, 1)
+dialogue_resource = ExtResource("4_877uw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+visibility_layer = 31
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_e8heu")
+
+[node name="PromptLabel" type="Label" parent="."]
+visibility_layer = 31
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -41.0
+offset_right = -29.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "Interact(e)"

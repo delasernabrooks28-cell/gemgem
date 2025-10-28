@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://chehrmprk2nyq"]
+
+[ext_resource type="Script" uid="uid://b8pq2da7tbg5i" path="res://spell_3.gd" id="1_solxv"]
+[ext_resource type="Texture2D" uid="uid://6mlnk3j2a6cl" path="res://assets/DarkSpell_01_spritesheet.png" id="2_solxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yw32"]
+size = Vector2(66, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvgbt"]
+atlas = ExtResource("2_solxv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yw32"]
+atlas = ExtResource("2_solxv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoe2b"]
+atlas = ExtResource("2_solxv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vt1v"]
+atlas = ExtResource("2_solxv")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuika"]
+atlas = ExtResource("2_solxv")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s204c"]
+atlas = ExtResource("2_solxv")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc44s"]
+atlas = ExtResource("2_solxv")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4obey"]
+atlas = ExtResource("2_solxv")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sp854"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvgbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yw32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoe2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vt1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuika")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s204c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc44s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4obey")
+}],
+"loop": true,
+"name": &"darkslash",
+"speed": 7.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_solxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_1yw32")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sp854")
+animation = &"darkslash"
+frame_progress = 0.420086

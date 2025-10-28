@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cws425oxjenfb"]
+
+[ext_resource type="Texture2D" uid="uid://u6hi6ejn3lsk" path="res://assets/lift_button.png" id="1_qyf6p"]
+[ext_resource type="Texture2D" uid="uid://b7d5bqp8c05q6" path="res://assets/right_button.png" id="2_ei8qd"]
+[ext_resource type="Texture2D" uid="uid://bq1r57yudrbj3" path="res://assets/jump_button.png" id="3_53kb1"]
+[ext_resource type="Texture2D" uid="uid://nhlftr7dr66h" path="res://assets/dash_button.png" id="4_ewu1d"]
+[ext_resource type="Texture2D" uid="uid://cxyll2v2y1ian" path="res://assets/sword_button.png" id="5_y4bty"]
+
+[node name="MobileControls" type="CanvasLayer"]
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(50, 794)
+scale = Vector2(2.25, 2.425)
+texture_normal = ExtResource("1_qyf6p")
+action = "move left"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(371, 800)
+scale = Vector2(2.3625004, 2.475)
+texture_normal = ExtResource("2_ei8qd")
+action = "move right"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2(1263, 795.00006)
+scale = Vector2(2.3124995, 2.425)
+texture_normal = ExtResource("3_53kb1")
+action = "jump"
+
+[node name="Dash" type="TouchScreenButton" parent="."]
+position = Vector2(1449.0001, 596)
+scale = Vector2(1.8874983, 2.1249998)
+texture_normal = ExtResource("4_ewu1d")
+action = "dash"
+
+[node name="Interact" type="TouchScreenButton" parent="."]
+position = Vector2(1598, 806)
+scale = Vector2(2.2374997, 2.1750004)
+texture_normal = ExtResource("5_y4bty")
+action = "interact"

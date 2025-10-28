@@ -1,0 +1,19 @@
+# === NPC 2: Sage of Shadows ===
+~ start
+Sage: You dare enter the halls of shadows? Prove your wits.
+=> Q3
+
+~ Q3
+Sage: According to the half-angle identities, what is sin(x/2) equal to?
+- A. sqrt(1 - cos x)/2 => Q3_WRONG
+- B.sin x / (1 + cos x) => Q3_WRONG 
+- C. sqrt((1 + cos x)/2) => Q3_CORRECT
+- D. 1 + cos x sin x => Q3_WRONG
+
+~ Q3_CORRECT
+Sage: Clever… few wanderers achieve this.
+=> END
+
+~ Q3_WRONG
+Sage: Aww… try again, mortal.
+=> Q3

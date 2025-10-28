@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://w84kjc51o2aw"]
+
+[ext_resource type="PackedScene" uid="uid://couqagdlvjvd0" path="res://actionable.tscn" id="1_gird2"]
+[ext_resource type="Texture2D" uid="uid://bmktb0vwcwpef" path="res://Agis.png" id="1_nsj3i"]
+[ext_resource type="Resource" uid="uid://b0kt8h6x0exk" path="res://assets/dialogues/7.dialogue" id="3_r7l63"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7l63"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(0, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86kdn"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(224, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vkd3"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(448, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxlhd"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(672, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko3qv"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(896, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlftw"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(1120, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l7ys"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(1344, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdjvt"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(1568, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqxcb"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(1792, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qicu5"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(2016, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g81rt"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(2240, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1j1j"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(2464, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvjm6"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(2688, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot4xm"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(2912, 0, 224, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrksw"]
+atlas = ExtResource("1_nsj3i")
+region = Rect2(3136, 0, 224, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qicu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7l63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86kdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vkd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxlhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko3qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlftw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l7ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdjvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqxcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qicu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g81rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1j1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvjm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot4xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrksw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g81rt"]
+radius = 137.0146
+
+[node name="Rune" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -14)
+sprite_frames = SubResource("SpriteFrames_qicu5")
+autoplay = "default"
+frame_progress = 0.8848141
+
+[node name="Actionable" parent="." instance=ExtResource("1_gird2")]
+dialogue_resource = ExtResource("3_r7l63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_g81rt")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -75.0
+offset_right = 41.0
+offset_bottom = -52.0
+text = "Interact(e)"

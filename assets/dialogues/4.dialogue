@@ -1,0 +1,20 @@
+# === NPC 3: Guardian of the Gate ===
+~ start
+Guardian: To pass, answer this truth.
+=> Q4
+
+~ Q4
+Guardian: What is the reciprocal identity for sec(x)?
+
+- A. 1/sin(x) => Q4_WRONG
+- B. 1/cos(x) => Q4_CORRECT
+- C. 1/tan(x) => Q4_WRONG
+- D. csc(x) => Q4_WRONG
+
+~ Q4_CORRECT
+Guardian: Impressive. Your mind aligns with the stars.
+=> END
+
+~ Q4_WRONG
+Guardian: Wrong… reflect and try again.
+=> Q4

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://vg5hayxagw1v"
+path="res://.godot/imported/Boss2.dialogue-eb70ab41b61a242651c933e28dc6139c.tres"
+
+[deps]
+
+source_file="res://addons/dialogue_manager/Boss2.dialogue"
+dest_files=["res://.godot/imported/Boss2.dialogue-eb70ab41b61a242651c933e28dc6139c.tres"]
+
+[params]
+
+defaults=true

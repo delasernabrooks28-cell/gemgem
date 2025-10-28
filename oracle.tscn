@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=3 uid="uid://cktef6m4fvfnj"]
+
+[ext_resource type="PackedScene" uid="uid://couqagdlvjvd0" path="res://actionable.tscn" id="1_6swne"]
+[ext_resource type="Texture2D" uid="uid://bqoo4bida37l2" path="res://assets/SHADOW Series - The Blind Huntress.png" id="1_i3jto"]
+[ext_resource type="Resource" uid="uid://b1l1f3ju8aake" path="res://assets/dialogues/6.dialogue" id="3_nc7aa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfs6l"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(0, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3si1v"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(240, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fisx2"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(480, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wnes"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(720, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3fd3"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(960, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb53u"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(1200, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdmpq"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(1440, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5jsj"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(1680, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g20d"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(1920, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5tsl"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(2160, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vapp"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(2400, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5oi7"]
+atlas = ExtResource("1_i3jto")
+region = Rect2(2640, 0, 240, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p571e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfs6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3si1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fisx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wnes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3fd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb53u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdmpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5jsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g20d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5tsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vapp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5oi7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_02c8r"]
+radius = 38.013157
+
+[node name="Oracle" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p571e")
+autoplay = "default"
+frame_progress = 0.080168135
+
+[node name="Actionable" parent="." instance=ExtResource("1_6swne")]
+dialogue_resource = ExtResource("3_nc7aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_02c8r")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -56.0
+offset_right = 41.0
+offset_bottom = -33.0
+text = "Interact(e)"

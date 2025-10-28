@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6yxny62o5qmb"]
+
+[ext_resource type="Script" uid="uid://cty4p6nbpdwgq" path="res://ghost.gd" id="1_v5pp4"]
+
+[node name="Ghost" type="AnimatedSprite2D"]
+z_index = 10
+script = ExtResource("1_v5pp4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true

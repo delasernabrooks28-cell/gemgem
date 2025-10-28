@@ -1,0 +1,19 @@
+# === NPC 6: Rune Keeper ===
+~ start
+Rune: The runes whisper… answer true.
+=> Q7
+
+~ Q7
+Rune: What is the general solution for sin(θ)=0?
+- A. θ = nπ => Q7_CORRECT
+- B. θ = 2nπ => Q7_WRONG
+- C. θ = π/2 + nπ => Q7_WRONG
+- D. θ = π/2 + 2nπ => Q7_WRONG
+
+~ Q7_CORRECT
+Rune: Correct… the path opens slightly.
+=> END
+
+~ Q7_WRONG
+Rune: Aww… try again, mortal.
+=> Q7

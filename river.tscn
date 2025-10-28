@@ -1,0 +1,115 @@
+[gd_scene load_steps=17 format=3 uid="uid://cp8wtkoywpegi"]
+
+[ext_resource type="Texture2D" uid="uid://cq5aab04copxh" path="res://assets/Skeleton Idle.png" id="1_5iwgs"]
+[ext_resource type="PackedScene" uid="uid://couqagdlvjvd0" path="res://actionable.tscn" id="1_gqjxk"]
+[ext_resource type="Resource" uid="uid://og03iabyjbj8" path="res://assets/dialogues/9.dialogue" id="3_fuygp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v534t"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a75lk"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylf0x"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfypt"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmd8a"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2hi4"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stc0s"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5ypc"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c62y8"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(192, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bndx"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(216, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6ihf"]
+atlas = ExtResource("1_5iwgs")
+region = Rect2(240, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xc6np"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v534t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a75lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylf0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfypt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmd8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2hi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stc0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5ypc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c62y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bndx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6ihf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jwokm"]
+radius = 59.3043
+
+[node name="river" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -4.999996)
+scale = Vector2(1.2916666, 1.5625)
+sprite_frames = SubResource("SpriteFrames_xc6np")
+autoplay = "default"
+frame_progress = 0.6895481
+
+[node name="Actionable" parent="." instance=ExtResource("1_gqjxk")]
+dialogue_resource = ExtResource("3_fuygp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_jwokm")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -50.0
+offset_right = 43.0
+offset_bottom = -27.0
+text = "Interact(e)"

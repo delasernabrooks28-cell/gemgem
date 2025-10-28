@@ -1,0 +1,83 @@
+~ start
+Luna: So... you dare face another reflection? I am Luna, Warden of Shadows.  
+Luna: Let us see if your reasoning pierces the obscurity.  
+[do! get_tree().get_first_node_in_group("player").lock_player()]
+[do! DialogueManager.luna.face_player()]
+=> Q11
+
+~ Q11
+Luna: What value of x will satisfy the equation -2?  
+- A. -π/4 => Q11_WRONG
+- B. -π/4 => Q11_WRONG
+- C. -π/2 => Q11_CORRECT
+- D. π/2 => Q11_WRONG
+
+~ Q11_CORRECT
+Luna: Correct. Even in negativity, clarity prevails. [do! DialogueManager.luna.trigger_correct_answer()]
+=> Q12
+
+~ Q11_WRONG
+Luna: Shadows mislead you. [do! DialogueManager.luna.trigger_wrong_answer()]
+=> END
+
+~ Q12
+Luna: The equation sin²(x) + cos²(x) - 6 = 0 has how many possible solutions?  
+- A. 0 => Q12_CORRECT
+- B. 1 => Q12_WRONG
+- C. 5 => Q12_WRONG
+- D. infinite => Q12_WRONG
+
+~ Q12_CORRECT
+Luna: Zero is still an answer. Well done. [do! DialogueManager.luna.trigger_correct_answer()]
+=> Q13
+
+~ Q12_WRONG
+Luna: Even patterns can deceive. [do! DialogueManager.luna.trigger_wrong_answer()]
+=> END
+
+~ Q13
+Luna: What is the equivalent of cos²(x) - sin(x)?  
+- A. sin(x)(1 + sin(x)) => Q13_WRONG
+- B. sin(x)(1 - sin(x)) => Q13_CORRECT
+- C. (1 - sin(x))(1 + sin(x)) => Q13_WRONG
+- D. (1 - sin(x))(1 - sin(x)) => Q13_WRONG
+
+~ Q13_CORRECT
+Luna: Accuracy shines through the reflection. [do! DialogueManager.luna.trigger_correct_answer()]
+=> Q14
+
+~ Q13_WRONG
+Luna: The reflection distorts your choice. [do! DialogueManager.luna.trigger_wrong_answer()]
+=> END
+
+~ Q14
+Luna: Which value satisfies 2 tan(x) − sec²(x) = 0?  
+- A. 7π/4 => Q14_WRONG
+- B. 5π/4 => Q14_WRONG
+- C. π/4 => Q14_CORRECT
+- D. 11π/4 => Q14_WRONG
+
+~ Q14_CORRECT
+Luna: Precisely. The balance of tangent and secant is yours. [do! DialogueManager.luna.trigger_correct_answer()]
+=> Q15
+
+~ Q14_WRONG
+Luna: Tangent slips through your grasp. [do! DialogueManager.luna.trigger_wrong_answer()]
+=> END
+
+~ Q15
+Luna: What is the general solution of 2 cos(2x) - 3 = 0?  
+- A. 11π/12 + kπ => Q15_WRONG
+- B. π/3 + k(2π) => Q15_WRONG
+- C. k(2π) => Q15_WRONG
+- D. π/6 + kπ => Q15_CORRECT
+
+~ Q15_CORRECT
+Luna: The reflection aligns with your answer.  [do! DialogueManager.luna.trigger_death()]
+[do! get_tree().get_first_node_in_group("player").unlock_player()]
+[do! DialogueManager.luna.queue_free()]
+=> END
+
+~ Q15_WRONG
+Luna: Even general solutions can mislead. [do! DialogueManager.luna.trigger_wrong_answer()]
+=> END

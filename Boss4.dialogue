@@ -1,0 +1,83 @@
+~ start
+Lunaris: So... the moon sends you? I am Lunaris, Warden of Reflection.  
+Lunaris: Let us see if your reason shines even when the light fades.  
+[do! get_tree().get_first_node_in_group("player").lock_player()]
+[do! DialogueManager.lunaris.face_player()]
+=> Q1
+
+~ Q1
+Lunaris: Solve the equation: 2cos(x) - 3 = 0  
+- A. x = π/6 and x = 11π/6 => Q1_WRONG
+- B. x = π/3 and x = 5π/3 => Q1_CORRECT
+- C. x = 5π/6 and x = 7π/6 => Q1_WRONG
+- D. x = π/4 and x = 7π/4 => Q1_WRONG
+
+~ Q1_CORRECT
+Lunaris: You see through the dark — correct. [do! DialogueManager.lunaris.trigger_correct_answer()]
+=> Q2
+
+~ Q1_WRONG
+Lunaris: The numbers mock your uncertainty. [do! DialogueManager.lunaris.trigger_wrong_answer()]
+=> END
+
+~ Q2
+Lunaris: For 2sin(x) + 1 = 0, find all possible x.  
+- A. x = 3π/4 and x = 5π/4 => Q2_WRONG
+- B. x = 5π/4 and x = 7π/4 => Q2_CORRECT
+- C. x = π/4 and x = 7π/4 => Q2_WRONG
+- D. x = 7π/6 and x = 11π/6 => Q2_WRONG
+
+~ Q2_CORRECT
+Lunaris: As gentle as moonlight, yet exact. [do! DialogueManager.lunaris.trigger_correct_answer()]
+=> Q3
+
+~ Q2_WRONG
+Lunaris: Even shadows can mislead. [do! DialogueManager.lunaris.trigger_wrong_answer()]
+=> END
+
+~ Q3
+Lunaris: Simplify: 5tan(x) + 5 = 0  
+- A. x = 3π/4 + 2kπ => Q3_WRONG
+- B. x = 3π/4 + kπ => Q3_CORRECT
+- C. x = π/4 + kπ => Q3_WRONG
+- D. x = 5π/4 + 2kπ => Q3_WRONG
+
+~ Q3_CORRECT
+Lunaris: Good. The tangent bows to your will. [do! DialogueManager.lunaris.trigger_correct_answer()]
+=> Q4
+
+~ Q3_WRONG
+Lunaris: The reflection bends wrongly. [do! DialogueManager.lunaris.trigger_wrong_answer()]
+=> END
+
+~ Q4
+Lunaris: Which trigonometric function reveals the horizontal distance of a light beam when its total length and angle are known?  
+- A. Cosecant => Q4_WRONG
+- B. Cosine => Q4_CORRECT
+- C. Sine => Q4_WRONG
+- D. Tangent => Q4_WRONG
+
+~ Q4_CORRECT
+Lunaris: The mind mirrors the truth — correct. [do! DialogueManager.lunaris.trigger_correct_answer()]
+=> Q5
+
+~ Q4_WRONG
+Lunaris: You chose the wrong reflection. [do! DialogueManager.lunaris.trigger_wrong_answer()]
+=> END
+
+~ Q5
+Lunaris: If a path extends east and north forming a right triangle, and its eastward component measures roughly 9.59° N of E, what is its bearing?  
+- A. 9.46° N of E => Q5_WRONG
+- B. 9.59° N of E => Q5_CORRECT
+- C. 80.4° N of E => Q5_WRONG
+- D. 80.54° N of E => Q5_WRONG
+
+~ Q5_CORRECT
+Lunaris: The stars align. You have passed the lunar trial. [do! DialogueManager.lunaris.trigger_death()]
+[do! get_tree().get_first_node_in_group("player").unlock_player()]
+[do! DialogueManager.lunaris.queue_free()]
+=> END!
+
+~ Q5_WRONG
+Lunaris: The horizon escapes your sight. [do! DialogueManager.lunaris.trigger_wrong_answer()]
+=> END

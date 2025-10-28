@@ -1,0 +1,25 @@
+~ start
+Demon: [[Greetings|Hello, mortal|At last...]] You’ve stumbled into my domain.
+Demon: I am the Keeper of Knowledge, bound to this world of trials. 
+Demon: Here, you won’t fight with blades or claws… but with **Pre-Calculus**.
+Demon: Each step you take, each question you face, will shape your fate. Fail, and you lose your strength. Succeed, and you may advance.
+
+- Who are you?
+	Demon: I am a guardian placed here to test your wit. Not of flesh, but of numbers and logic. My power is sealed in equations.
+	=> start
+- What do I have to do?
+	Demon: Simple. Answer the questions. Survive the traps. The more correct answers you give, the closer you reach the truth.
+	=> start
+- What happens if I fail?
+	Demon: You’ll lose hearts, and your journey will become harder. But do not fear—failure teaches as much as success.
+	=> start
+- Enough talk, let’s begin. => tutorial_intro
+
+Demon: Remember, mortal—knowledge is your weapon here.
+=> END
+
+~ tutorial_intro
+Demon: Very well. Ahead of you are spikes, traps, and my brethren who guard the path.
+Demon: Each guardian will test you with questions—five for each boss. Answer wisely to survive.
+Demon: If you are ready… step forward. Your lesson begins now.
+=> END

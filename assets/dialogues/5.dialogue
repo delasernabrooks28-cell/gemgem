@@ -1,0 +1,20 @@
+# === NPC 4: Wandering Alchemist ===
+~ start
+Alchemist: Numbers and potions… both require precision.
+=> Q5
+
+~ Q5
+Alchemist: Based on the Pythagorean Identities, sin²(x) + cos²(x) is equal to:
+
+- A. sec²(x) => Q5_WRONG
+- B. 1 => Q5_CORRECT
+- C. csc²(x) => Q5_WRONG
+- D. tan²(x) => Q5_WRONG
+
+~ Q5_CORRECT
+Alchemist: Correct. The formula sings in harmony.
+=> END
+
+~ Q5_WRONG
+Alchemist: Aww… you missed it. Try again.
+=> Q5

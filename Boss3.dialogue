@@ -1,0 +1,83 @@
+~ start
+Aetherion: I am Aetherion — Warden of the Endless Sky.  
+Aetherion: The winds whisper of your strength. Can your logic soar as high?  
+[do! get_tree().get_first_node_in_group("player").lock_player()]
+[do! DialogueManager.aetherion.face_player()]
+=> Q1
+
+~ Q1
+Aetherion: The wind travels 5 miles at a 60° angle from east. How far does it drift eastward?  
+- A. 2.89 miles => Q1_WRONG
+- B. 4.33 miles => Q1_WRONG
+- C. 8.66 miles => Q1_CORRECT
+- D. 10 miles => Q1_WRONG
+
+~ Q1_CORRECT
+Aetherion: Sharp as a gust! [do! DialogueManager.aetherion.trigger_correct_answer()]
+=> Q2
+
+~ Q1_WRONG
+Aetherion: Your compass spins wrongly. [do! DialogueManager.aetherion.trigger_wrong_answer()]
+=> END
+
+~ Q2
+Aetherion: The shadow of a building forms a right triangle. If its base is 50 ft and the angle of elevation is 45°, find the building’s height.  
+- A. 22.0° => Q2_WRONG
+- B. 22.5° => Q2_WRONG
+- C. 23.5° => Q2_WRONG
+- D. 50 ft => Q2_CORRECT
+
+~ Q2_CORRECT
+Aetherion: Balanced between earth and air. [do! DialogueManager.aetherion.trigger_correct_answer()]
+=> Q3
+
+~ Q2_WRONG
+Aetherion: You gaze but see not. [do! DialogueManager.aetherion.trigger_wrong_answer()]
+=> END
+
+~ Q3
+Aetherion: A drone hovers 500 m above ground, 1500 m away horizontally. What is the angle of depression to the observer?  
+- A. 14.0° => Q3_WRONG
+- B. 18.4° => Q3_CORRECT
+- C. 36.8° => Q3_WRONG
+- D. 71.6° => Q3_WRONG
+
+~ Q3_CORRECT
+Aetherion: You calculate as swiftly as wind! [do! DialogueManager.aetherion.trigger_correct_answer()]
+=> Q4
+
+~ Q3_WRONG
+Aetherion: The gusts scatter your answer. [do! DialogueManager.aetherion.trigger_wrong_answer()]
+=> END
+
+~ Q4
+Aetherion: If a ramp’s run is 18 m and its hypotenuse 20 m, find its angle of inclination.  
+- A. 25.8° => Q4_WRONG
+- B. 36.9° => Q4_CORRECT
+- C. 41.4° => Q4_WRONG
+- D. 64.2° => Q4_WRONG
+
+~ Q4_CORRECT
+Aetherion: Geometry bends before your mind. [do! DialogueManager.aetherion.trigger_correct_answer()]
+=> Q5
+
+~ Q4_WRONG
+Aetherion: You stumble upon the slope. [do! DialogueManager.aetherion.trigger_wrong_answer()]
+=> END
+
+~ Q5
+Aetherion: Which trigonometric ratio directly links height and distance in such ramps?  
+- A. Tangent => Q5_CORRECT
+- B. Sine => Q5_WRONG
+- C. Cosine => Q5_WRONG
+- D. Cosecant => Q5_WRONG
+
+~ Q5_CORRECT
+Aetherion: Excellent. The winds themselves applaud you. [do! DialogueManager.aetherion.trigger_death()]
+[do! get_tree().get_first_node_in_group("player").unlock_player()]
+[do! DialogueManager.aetherion.queue_free()]
+=> END!
+
+~ Q5_WRONG
+Aetherion: The air grows still — you fail this ascent. [do! DialogueManager.aetherion.trigger_wrong_answer()]
+=> END

@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://ns37f6ggepwp"]
+
+[ext_resource type="Script" uid="uid://us8covng57di" path="res://alchemist.gd" id="1_26stj"]
+[ext_resource type="Texture2D" uid="uid://rtemit5w3b5b" path="res://addons/IDEL/Idle.png" id="1_35ry1"]
+[ext_resource type="PackedScene" uid="uid://couqagdlvjvd0" path="res://actionable.tscn" id="1_k5d4b"]
+[ext_resource type="Resource" uid="uid://cxp0e8dtt6qa5" path="res://assets/dialogues/5.dialogue" id="4_22k71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26stj"]
+atlas = ExtResource("1_35ry1")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22k71"]
+atlas = ExtResource("1_35ry1")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvvv0"]
+atlas = ExtResource("1_35ry1")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0deth"]
+atlas = ExtResource("1_35ry1")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2xs6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26stj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22k71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvvv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0deth")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhltn"]
+radius = 66.9104
+
+[node name="Alchemist" type="StaticBody2D"]
+script = ExtResource("1_26stj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i2xs6")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.94844633
+
+[node name="Actionable" parent="." instance=ExtResource("1_k5d4b")]
+dialogue_resource = ExtResource("4_22k71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_uhltn")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -46.0
+offset_right = 43.0
+offset_bottom = -23.0
+text = "Interact(e)"

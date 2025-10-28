@@ -1,0 +1,19 @@
+# === NPC 5: Mystic Oracle ===
+~ start
+Oracle: Your fate is intertwined with equations. Solve this.
+=> Q6
+
+~ Q6
+Oracle: According to Even-Odd Identities, what is sin(-x)?
+- A. -sin(x) => Q6_CORRECT
+- B. sin(x) => Q6_WRONG
+- C. cos(x) => Q6_WRONG
+- D. -cos(x) => Q6_WRONG
+
+~ Q6_CORRECT
+Oracle: Yes… the symmetry reveals itself to you.
+=> END
+
+~ Q6_WRONG
+Oracle: Focus… try once more.
+=> Q6

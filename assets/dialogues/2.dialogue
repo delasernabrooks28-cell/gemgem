@@ -1,0 +1,36 @@
+~ start
+Elder: Welcome, traveler. I’ve studied the stars and numbers alike.
+Elder: To proceed, you must answer wisely.
+=> Q1
+
+~ Q1
+Elder: Which of the following expressions is equivalent to cos(2x)?
+
+- A. cos²x + sin²x => Q1_WRONG
+- B. 1 - 2sin²x => Q1_CORRECT
+- C. 2 tan x / (1 - tan²x) => Q1_WRONG
+- D. 1 - cos²x => Q1_WRONG
+
+~ Q1_CORRECT
+Elder: Well done. Your mind is sharp.
+=> Q2
+
+~ Q1_WRONG
+Elder: Aww… try again, focus your mind.
+=> Q1
+
+~ Q2
+Elder: What is the value of tan(θ) in terms of sin(θ) and cos(θ)?
+
+- A. cos(θ)/sin(θ) => Q2_WRONG
+- B. sin(θ)cos(θ) => Q2_WRONG
+- C. 1/cot(θ) => Q2_WRONG
+- D. sin(θ)/cos(θ) => Q2_CORRECT
+
+~ Q2_CORRECT
+Elder: Excellent. Knowledge favors the prepared.
+=> END
+
+~ Q2_WRONG
+Elder: Not quite… think carefully and try again.
+=> Q2

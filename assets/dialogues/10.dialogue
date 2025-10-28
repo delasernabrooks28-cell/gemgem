@@ -1,0 +1,14 @@
+~ Q10
+Wind: Which of the following is an identity used to solve a trig equation?
+- A. sin²(θ) + cos²(θ) = 1 => Q10_CORRECT
+- B. sin(θ) = adjacent/hypotenuse => Q10_WRONG
+- C. tan(θ) = opposite/hypotenuse => Q10_WRONG
+- D. sec(θ) = 1/tan(θ) => Q10_WRONG
+
+~ Q10_CORRECT
+Wind: Excellent… the winds approve of your wit.
+=> END
+
+~ Q10_WRONG
+Wind: Wrong… try again, clever one.
+=> Q10

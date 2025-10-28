@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://chygaw6ibp8i0"]
+
+[ext_resource type="Script" uid="uid://cndpryy6ife64" path="res://spell_4.gd" id="1_e6m6a"]
+[ext_resource type="Texture2D" uid="uid://b6pcvr2h8tsom" path="res://assets/DarkSpell_02_spritesheet.png" id="2_e6m6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd55"]
+size = Vector2(222, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jcce"]
+atlas = ExtResource("2_e6m6a")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkm7q"]
+atlas = ExtResource("2_e6m6a")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8mm7"]
+atlas = ExtResource("2_e6m6a")
+region = Rect2(512, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc6b3"]
+atlas = ExtResource("2_e6m6a")
+region = Rect2(768, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo5wx"]
+atlas = ExtResource("2_e6m6a")
+region = Rect2(1024, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u26md"]
+atlas = ExtResource("2_e6m6a")
+region = Rect2(1280, 0, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tj3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jcce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkm7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8mm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc6b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo5wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u26md")
+}],
+"loop": true,
+"name": &"shadowlaunch",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_e6m6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46, -30)
+shape = SubResource("RectangleShape2D_0yd55")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(59, -49)
+sprite_frames = SubResource("SpriteFrames_8tj3n")
+animation = &"shadowlaunch"
+frame_progress = 0.412147

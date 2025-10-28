@@ -1,0 +1,19 @@
+# === NPC 8: Spirit of the River ===
+~ start
+River: Flow like the water, but think like the mind.
+=> Q9
+
+~ Q9
+River: The principal value of arcsin(0.5) is:
+- A. 30° => Q9_CORRECT
+- B. 120° => Q9_WRONG
+- C. 150° => Q9_WRONG
+- D. 210° => Q9_WRONG
+
+~ Q9_CORRECT
+River: Well done… the currents honor your insight.
+=> END
+
+~ Q9_WRONG
+River: Try again… concentrate.
+=> Q9
